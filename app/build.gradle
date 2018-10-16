@@ -63,7 +63,6 @@ dependencies {
     implementation rootProject.ext.dependencies["glide"]
     //project
     implementation project(':banner')
-    implementation project(':retrofit')
     // lib
     implementation files('libs/janalytics-android-1.2.1.jar')
     implementation files('libs/jcore-android-1.2.3.jar')
