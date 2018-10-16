@@ -1,0 +1,11 @@
+include ':app', ':refreshview_sample', ':zxing-sample', ':pullrefreshsample'
+include ':retrofit'
+include ':banner'
+include ':custom-view'
+include ':commonrefreshlayout'
+include ':lib-zxing'
+
+
+
+
+

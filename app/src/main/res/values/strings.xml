@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">yulh-practice</string>
+
+    <string name="hint_user_name">请输入账号</string>
+    <string name="hint_password">请输入登录密码</string>
+    <string name="login">登录</string>
+    <string name="fengshoushou">欢迎使用丰收收支付程序</string>
+</resources>
