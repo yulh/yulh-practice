@@ -1,8 +1,8 @@
 package net.practice.ui.base;
 
 
-import com.retrofit.ApiClient;
 
+import net.practice.retrofit.ApiClient;
 import net.practice.retrofit.ApiStores;
 import net.practice.utlis.AppUtils;
 

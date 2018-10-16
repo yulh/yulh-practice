@@ -1,7 +1,5 @@
 package net.practice.retrofit;
 
-import com.retrofit.ApiStores;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 

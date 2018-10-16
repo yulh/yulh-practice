@@ -1,7 +1,8 @@
 package net.practice.retrofit;
 
 
-import com.utils.LogUtil;
+
+import net.practice.utlis.LogUtil;
 
 import io.reactivex.observers.DisposableObserver;
 import retrofit2.HttpException;

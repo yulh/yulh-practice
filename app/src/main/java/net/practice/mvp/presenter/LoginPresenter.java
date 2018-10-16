@@ -2,10 +2,10 @@ package net.practice.mvp.presenter;
 
 
 
-import com.retrofit.ApiCallback;
 
 import net.practice.mvp.model.LoginModel;
 import net.practice.mvp.view.LoginView;
+import net.practice.retrofit.ApiCallback;
 import net.practice.ui.base.BasePresenter;
 
 import java.util.Map;

@@ -1,7 +1,8 @@
 package net.practice.utlis;
 
-import com.retrofit.ApiStores;
-import com.retrofit.AppService;
+
+import net.practice.retrofit.ApiStores;
+import net.practice.retrofit.AppService;
 
 import java.io.BufferedInputStream;
 import java.io.File;

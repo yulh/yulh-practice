@@ -1,10 +1,10 @@
 package net.practice.mvp.presenter;
 
-import com.retrofit.ApiCallback;
 
 import net.practice.mvp.model.BannerModel;
 import net.practice.mvp.model.WeatherInfoModel;
 import net.practice.mvp.view.MainFragPresenterView;
+import net.practice.retrofit.ApiCallback;
 import net.practice.ui.base.BasePresenter;
 
 public class MainFragmentPresenter extends BasePresenter<MainFragPresenterView> {

@@ -9,6 +9,7 @@ import net.practice.mvp.model.WeatherInfoModel;
 import java.util.Map;
 
 import io.reactivex.Observable;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
@@ -16,6 +17,8 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Streaming;
+import retrofit2.http.Url;
 
 public interface ApiStores {
 
@@ -29,7 +32,7 @@ public interface ApiStores {
     @GET("banner/api/{itemCount}item.json")
     Observable<BannerModel> fetchItemsWithItemCount(@Path("itemCount") int itemCount);
 
-//    // 被扫
+    //    // 被扫
 //    @Headers({"urlname:manage"})
 //    @FormUrlEncoded
 //    @POST("Api/NormPay.ashx?action=BeScan")
@@ -44,5 +47,14 @@ public interface ApiStores {
 //    @FormUrlEncoded
 //    @POST("Api/NormPay.ashx?action=Query")
 //    Observable<QueryTradeModel> queryTrade(@FieldMap Map<String, String> map);
+
+    /**
+     * 下载最新模板
+     *
+     * @return
+     */
+    @Streaming
+    @GET
+    Call<ResponseBody> downloadLatestFeature(@Url String fileUrl);
 
 }

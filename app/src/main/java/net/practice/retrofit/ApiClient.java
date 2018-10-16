@@ -1,6 +1,7 @@
 package net.practice.retrofit;
 
-import com.retrofit.BuildConfig;
+
+import net.practice.BuildConfig;
 
 import java.util.Map;
 
