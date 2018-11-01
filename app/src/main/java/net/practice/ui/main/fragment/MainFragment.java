@@ -1,31 +1,21 @@
 package net.practice.ui.main.fragment;
 
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import net.practice.R;
-import net.practice.app.ExampleApplication;
 import net.practice.mvp.model.WeatherInfoModel;
 import net.practice.mvp.presenter.MainFragmentPresenter;
 import net.practice.mvp.view.MainFragPresenterView;
-import net.practice.ui.base.BasePresenter;
 import net.practice.mvp.model.BannerModel;
 import net.practice.ui.base.BaseFragment;
 import net.practice.utlis.LogUtil;
-import net.practice.utlis.ToastUtil;
-import net.practice.utlis.view.CircleProgressbar;
 
 import butterknife.BindView;
 import cn.bingoogolapple.bgabanner.BGABanner;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainFragment extends BaseFragment<MainFragmentPresenter> implements BGABanner.Delegate<ImageView, String>, BGABanner.Adapter<ImageView, String>, MainFragPresenterView {
 

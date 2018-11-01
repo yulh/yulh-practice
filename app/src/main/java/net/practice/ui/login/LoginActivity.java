@@ -8,25 +8,27 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import net.practice.R;
+import net.practice.app.StaticParamterUtil;
+import net.practice.bean.UserBean;
 import net.practice.mvp.model.LoginModel;
 import net.practice.mvp.presenter.LoginPresenter;
 import net.practice.mvp.view.LoginView;
 import net.practice.ui.base.BaseActivity;
+import net.practice.ui.base.BasePresenter;
 import net.practice.ui.main.MainActivity;
 import net.practice.utlis.ActivityManager;
 import net.practice.utlis.AppUtils;
 import net.practice.utlis.LogUtil;
-import net.practice.utlis.Md5Encrypt;
 import net.practice.utlis.ProgressDialogUtil;
 import net.practice.utlis.SharePerferenUtil;
 import net.practice.utlis.ToastUtil;
 
-import java.util.TreeMap;
+import org.litepal.crud.DataSupport;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginView {
+public class LoginActivity extends BaseActivity {
 
     @BindView(R.id.userName)
     EditText userNameView;
@@ -55,8 +57,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
     @Override
-    protected LoginPresenter createPresenter() {
-        return new LoginPresenter(this);
+    protected BasePresenter createPresenter() {
+        return null;
     }
 
     @Override
@@ -115,31 +117,14 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
             return;
         }
 
-        SharePerferenUtil.setParam(mContext, AppUtils.IS_AlREADY_LOGIN, true);
+        boolean isExist = DataSupport.isExist(UserBean.class, "UserName=? AND Password=? ", userName, passWord);
 
-        startActivity(new Intent(mContext, MainActivity.class));
-        ActivityManager.getInstance().finishActivity(this);
-
-    }
-
-    @Override
-    public void getDataSuccess(LoginModel model) {
-
-    }
-
-    @Override
-    public void getDataFail(String msg) {
-        LogUtil.e(msg);
-        ToastUtil.showShort(mContext, msg);
-    }
-
-    @Override
-    public void showLoading() {
-        ProgressDialogUtil.showProgressDialog(mContext);
-    }
-
-    @Override
-    public void hideLoading() {
-        ProgressDialogUtil.dismissProgressDialog();
+        if (isExist) {
+            SharePerferenUtil.setParam(mContext, StaticParamterUtil.IS_AlREADY_LOGIN, true);
+            startActivity(new Intent(mContext, MainActivity.class));
+            ActivityManager.getInstance().finishActivity(this);
+        } else {
+            ToastUtil.showShort(mContext, "用户不存在");
+        }
     }
 }

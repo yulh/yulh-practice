@@ -61,6 +61,7 @@ dependencies {
     implementation rootProject.ext.dependencies["rxandroid"]
     implementation rootProject.ext.dependencies["rxjava"]
     implementation rootProject.ext.dependencies["glide"]
+    implementation rootProject.ext.dependencies["litepal"]
     //project
     implementation project(':banner')
     // lib

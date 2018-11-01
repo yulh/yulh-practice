@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 
 import net.practice.R;
+import net.practice.app.StaticParamterUtil;
 import net.practice.ui.base.BaseActivity;
 import net.practice.ui.base.BasePresenter;
 import net.practice.ui.login.LoginActivity;
@@ -21,7 +22,7 @@ public class SplashActivity extends BaseActivity {
     @Override
     public void initView() {
         Intent intent = new Intent();
-        boolean IsAlreadyLogin = Boolean.parseBoolean(SharePerferenUtil.getParam(mContext, AppUtils.IS_AlREADY_LOGIN, false).toString());
+        boolean IsAlreadyLogin = Boolean.parseBoolean(SharePerferenUtil.getParam(mContext, StaticParamterUtil.IS_AlREADY_LOGIN, false).toString());
         if (IsAlreadyLogin == false) {
             intent.setClass(mContext, LoginActivity.class);
             startActivity(intent);

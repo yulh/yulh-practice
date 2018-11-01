@@ -1,16 +1,16 @@
 package net.practice.mvp.model;
 
 
-import net.practice.bean.LoginBean;
+import net.practice.bean.UserBean;
 
 public class LoginModel extends BaseModel {
-    private LoginBean memberInfo;
+    private UserBean memberInfo;
 
-    public LoginBean getMemberInfo() {
+    public UserBean getMemberInfo() {
         return memberInfo;
     }
 
-    public void setMemberInfo(LoginBean memberInfo) {
+    public void setMemberInfo(UserBean memberInfo) {
         this.memberInfo = memberInfo;
     }
 

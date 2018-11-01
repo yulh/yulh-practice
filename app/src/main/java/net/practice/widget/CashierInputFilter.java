@@ -1,4 +1,4 @@
-package net.practice.utlis.view;
+package net.practice.widget;
 
 import android.text.InputFilter;
 import android.text.Spanned;

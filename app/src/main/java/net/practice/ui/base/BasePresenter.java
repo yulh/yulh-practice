@@ -1,10 +1,9 @@
 package net.practice.ui.base;
 
 
-
+import net.practice.app.StaticParamterUtil;
 import net.practice.retrofit.ApiClient;
 import net.practice.retrofit.ApiStores;
-import net.practice.utlis.AppUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,13 +23,13 @@ public class BasePresenter<V> {
         this.mvpView = mvpView;
 
         Map<String, String> map = new HashMap<String, String>();
-        map.put("manage", AppUtils.payUrl);
-        map.put("sky", AppUtils.weatherUrl);
-        map.put("app", AppUtils.appUrl);
-        map.put("bannar", AppUtils.bannarUrl);
+        map.put("manage", StaticParamterUtil.payUrl);
+        map.put("sky", StaticParamterUtil.weatherUrl);
+        map.put("app", StaticParamterUtil.appUrl);
+        map.put("bannar", StaticParamterUtil.bannarUrl);
 
         apiStores = new ApiClient()
-                .setBaseUrl(AppUtils.payUrl)
+                .setBaseUrl(StaticParamterUtil.payUrl)
                 .setHeaderName("urlName")
                 .setInterceptorMap(map)
                 .retrofit()

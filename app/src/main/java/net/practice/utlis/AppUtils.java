@@ -6,19 +6,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.UUID;
 
 public class AppUtils {
-
-    public static String userCode = "99999999";
-    public static String privateKey = "4550cc08dc5e4fb6";
-
-    public static final String IS_FIRST_LOGIN = "Is_First_Login";
-    public static final String IS_AlREADY_LOGIN = "Is_Already_Login";
-
-    public static String appUrl = "http://qr.irichpay.com/";
-    public static String payUrl = "http://h5.irichpay.com/";
-    public static String weatherUrl = "http://www.weather.com.cn/";
-    public static String bannarUrl = "http://7xk9dj.com1.z0.glb.clouddn.com/";
 
     public static String getTimeByFommat() {
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//设置日期格式
@@ -58,5 +48,12 @@ public class AppUtils {
             result.append(mapKey + "=" + map.get(mapKey) + "&");
         }
         return result.length() > 0 ? result.substring(0, result.length() - 1) : "";
+    }
+
+    /**
+     * 得到唯一号、替代特殊符号
+     */
+    public static String getUUID() {
+        return UUID.randomUUID().toString().replace("-", "");
     }
 }

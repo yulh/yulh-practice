@@ -1,4 +1,4 @@
-package net.practice.utlis.view;
+package net.practice.widget;
 
 import android.annotation.TargetApi;
 import android.content.Context;

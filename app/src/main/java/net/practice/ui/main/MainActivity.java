@@ -10,13 +10,13 @@ import android.view.View;
 import android.widget.RadioButton;
 
 import net.practice.R;
+import net.practice.app.StaticParamterUtil;
 import net.practice.ui.base.BaseActivity;
 import net.practice.ui.main.fragment.MainFragment;
 import net.practice.ui.main.fragment.MineFragment;
 import net.practice.mvp.model.MainModel;
 import net.practice.mvp.presenter.MainPresenter;
 import net.practice.mvp.view.MainView;
-import net.practice.utlis.AppUtils;
 import net.practice.utlis.SharePerferenUtil;
 import net.practice.utlis.ToastUtil;
 
@@ -179,7 +179,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
                 firstTime = secondTime;
                 return true;
             } else {
-                SharePerferenUtil.setParam(mContext, AppUtils.IS_AlREADY_LOGIN,false);
+                SharePerferenUtil.setParam(mContext, StaticParamterUtil.IS_AlREADY_LOGIN,false);
                 System.exit(0);
             }
         }
