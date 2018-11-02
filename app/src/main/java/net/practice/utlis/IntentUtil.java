@@ -29,4 +29,6 @@ public class IntentUtil {
         // 判断packageNames中是否有目标程序的包名，有TRUE，没有FALSE
         return packageNames.contains(packageName);
     }
+
+
 }

@@ -5,7 +5,7 @@ import org.litepal.crud.DataSupport;
 
 public class UserBean extends DataSupport {
 
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     String UserName;
     @Column(nullable = false)
     String Password;

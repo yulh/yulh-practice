@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:minHeight="@dimen/dp_45"
-            android:text="GBLS互联全球"
+            android:text="@string/app_name"
             android:textColor="@color/color_1298FD"
             android:textSize="@dimen/sp_20"/>
     </LinearLayout>
@@ -120,5 +120,17 @@
         android:background="@drawable/selector_btn_test"
         android:gravity="center"
         android:text="@string/login"
+        android:textColor="@color/color_FFFFFF"/>
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/selector_btn_test"
+        android:gravity="center"
+        android:text="@string/register"
         android:textColor="@color/color_FFFFFF"/>
 </LinearLayout>

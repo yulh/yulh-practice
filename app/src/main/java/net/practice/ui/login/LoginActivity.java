@@ -16,6 +16,7 @@ import net.practice.mvp.view.LoginView;
 import net.practice.ui.base.BaseActivity;
 import net.practice.ui.base.BasePresenter;
 import net.practice.ui.main.MainActivity;
+import net.practice.ui.register.RegisterActiviy;
 import net.practice.utlis.ActivityManager;
 import net.practice.utlis.AppUtils;
 import net.practice.utlis.LogUtil;
@@ -39,6 +40,8 @@ public class LoginActivity extends BaseActivity {
 
     @BindView(R.id.login)
     Button login;
+    @BindView(R.id.register)
+    Button register;
 
     @Override
     public int findLayoutID() {
@@ -66,7 +69,7 @@ public class LoginActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.pwdIsVisable, R.id.login})
+    @OnClick({R.id.pwdIsVisable, R.id.login, R.id.register})
     public void onClickView(View v) {
         switch (v.getId()) {
             case R.id.pwdIsVisable:
@@ -74,6 +77,9 @@ public class LoginActivity extends BaseActivity {
                 break;
             case R.id.login:
                 login();
+                break;
+            case R.id.register:
+                register();
                 break;
         }
     }
@@ -100,7 +106,7 @@ public class LoginActivity extends BaseActivity {
     private String userName;
     private String passWord;
 
-    public void login() {
+    private void login() {
 
         userName = userNameView.getText().toString();
         passWord = passwordView.getText().toString();
@@ -120,11 +126,19 @@ public class LoginActivity extends BaseActivity {
         boolean isExist = DataSupport.isExist(UserBean.class, "UserName=? AND Password=? ", userName, passWord);
 
         if (isExist) {
+            SharePerferenUtil.setParam(mContext, "userName", userName);
+            SharePerferenUtil.setParam(mContext, "password", passWord);
+
             SharePerferenUtil.setParam(mContext, StaticParamterUtil.IS_AlREADY_LOGIN, true);
             startActivity(new Intent(mContext, MainActivity.class));
             ActivityManager.getInstance().finishActivity(this);
-        } else {
-            ToastUtil.showShort(mContext, "用户不存在");
+            return;
         }
+
+        ToastUtil.showShort(mContext, "用户名或密码错误");
+    }
+
+    private void register() {
+        startActivity(new Intent(mContext, RegisterActiviy.class));
     }
 }
